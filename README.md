@@ -14,7 +14,7 @@ Include `[district.format]` in your CLJS file
 Optionally include `[district.format.mount]` in your CLJS file, where you use `mount/start`
 
 ## district.format
-#### `::format-datetime [date & [formatter]]`
+#### `format-datetime [date & [formatter]]`
 Formats [cljs-time](https://github.com/andrewmcveigh/cljs-time) datetime. Optionally you can pass a formatter. List
 of available formatters can be found at [cljs-time.format/formatters](https://github.com/andrewmcveigh/cljs-time/blob/master/src/cljs_time/format.cljs#L142),
 or you can pass formatting string as well.
@@ -32,7 +32,7 @@ Default: `:rfc822`
 ```
 
 
-#### `::format-local-datetime [date & [formatter]]`
+#### `format-local-datetime [date & [formatter]]`
 Formats local datetime.
 
 Default formatter can be set at `format/*default-local-datetime-formatter*` or with mount under the key `:default-local-datetime-formatter`.
@@ -45,7 +45,7 @@ Default: `:rfc822`
 ```
 
 
-#### `::format-date [date & [formatter]]`
+#### `format-date [date & [formatter]]`
 Formats date.
 
 Default formatter can be set at `format/*default-date-formatter*` or with mount under the key `:default-date-formatter`.
@@ -58,8 +58,8 @@ Default: `"EEE, dd MMM yyyy"`
 ```
 
 
-#### `::format-local-date [date & [formatter]]`
-Formats date.
+#### `format-local-date [date & [formatter]]`
+Formats local date.
 
 Default formatter can be set at `format/*default-local-date-formatter*` or with mount under the key `:default-local-date-formatter`.
 
@@ -71,7 +71,7 @@ Default: `"EEE, dd MMM yyyy"`
 ```
 
 
-#### `::format-number [x & [opts]]`
+#### `format-number [x & [opts]]`
 Formats a number.  
 Optional opts: 
 * `:locale`
@@ -94,7 +94,7 @@ Default max-fraction-digits: `2`
 ```
 
 
-#### `::format-currency [x & [opts]]`
+#### `format-currency [x & [opts]]`
 Formats a number with fiat currency.  
 Optional opts: 
 * `:locale`
@@ -118,7 +118,7 @@ Default min-fraction-digits: `nil`
 ```
 
 
-#### `::format-token [x & [opts]]`
+#### `format-token [x & [opts]]`
 Formats a number.  
 Optional opts: 
 * `:locale`
@@ -141,21 +141,21 @@ Default min-fraction-digits: `nil`
 ;; => "1,000,000.13 DNT"
 ```
 
-#### `::format-eth [x & [opts]]`
+#### `format-eth [x & [opts]]`
 Calls `format-token` with token `ETH`.
 ```clojure
 (format/format-eth 1000000.12945678)
 ;; => "1,000,000.13 ETH"
 ```
 
-#### `::format-dnt [x & [opts]]`
+#### `format-dnt [x & [opts]]`
 Calls `format-token` with token `DNT`.
 ```clojure
 (format/format-dnt 1000000.12945678)
 ;; => "1,000,000.13 DNT"
 ```
 
-#### `::format-number-metric [x & [opts]]`
+#### `format-number-metric [x & [opts]]`
 Formats number in shortened form with metric unit symbols. 
 ```clojure
 (format/format-number-metric 10000)
@@ -166,7 +166,7 @@ Formats number in shortened form with metric unit symbols.
 ```
 
 
-#### `::etherscan-addr-url [address]`
+#### `etherscan-addr-url [address]`
 Returns etherscan url for an address 
 ```clojure
 (format/etherscan-addr-url "0x7d10b16dd1f9e0df45976d402879fb496c114936")
@@ -174,7 +174,7 @@ Returns etherscan url for an address
 ```
 
 
-#### `::etherscan-tx-url [tx-hash]`
+#### `etherscan-tx-url [tx-hash]`
 Returns etherscan url for a transaction 
 ```clojure
 (format/etherscan-tx-url "0x60a1ef75c4217e2a23eab7ae508ff000b458abe92a2f80d766da1223917faa26")
@@ -182,7 +182,7 @@ Returns etherscan url for a transaction
 ```
 
 
-#### `::time-ago [from-time & [to-time]]`
+#### `time-ago [from-time & [to-time]]`
 Returns time ago string. If `to-time` is not given, current time is used. 
  
 ```clojure
