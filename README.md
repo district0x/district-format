@@ -4,7 +4,7 @@
 
 
 Set of functions helpful for formatting. Formatting functions always return string.  
-This library also comes with optional [mount](https://github.com/tolitius/mount) module at [district.format.mount](#district.format.mount), that
+This library also comes with optional [mount](https://github.com/tolitius/mount) module at [district.format.mount](#districtformatmount), that
 helps to set up global configuration in a cleaner way. 
 
 
