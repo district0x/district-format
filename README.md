@@ -14,7 +14,10 @@ Include `[district.format]` in your CLJS file
 Optionally include `[district.format.mount]` in your CLJS file, where you use `mount/start`
 
 ## district.format
-#### `format-datetime [date & [formatter]]`
+
+[test](#my-custom-anchor-name)
+
+#### [](#my-custom-anchor-name)`format-datetime [date & [formatter]]`
 Formats [cljs-time](https://github.com/andrewmcveigh/cljs-time) datetime. Optionally you can pass a formatter. List
 of available formatters can be found at [cljs-time.format/formatters](https://github.com/andrewmcveigh/cljs-time/blob/master/src/cljs_time/format.cljs#L142),
 or you can pass formatting string as well.
