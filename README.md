@@ -58,7 +58,7 @@ Default: `:rfc822`
 ```
 
 
-#### <a name="format-datetime"></a>`format-local-datetime [date & [formatter]]`
+#### <a name="format-local-datetime"></a>`format-local-datetime [date & [formatter]]`
 Formats local datetime.
 
 Default formatter can be set at `format/*default-local-datetime-formatter*` or with mount under the key `:default-local-datetime-formatter`.
