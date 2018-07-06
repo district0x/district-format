@@ -77,5 +77,16 @@
 
   (is (= "/abc?a=1&b=2" (format/format-url "/abc" {:a 1 :b 2})))
 
-  (is (= "a/b" (format/format-namespaced-kw :a/b))))
+  (is (= "a/b" (format/format-namespaced-kw :a/b)))
+
+  (is (= "33%" (format/format-percentage 1 3)))
+
+  (is (= "http://127.0.0.1:8080/" (format/ensure-trailing-slash "http://127.0.0.1:8080")))
+
+  (is (= "http://127.0.0.1:8080/" (format/ensure-trailing-slash "http://127.0.0.1:8080/")))
+
+  (is (= "{\"title\":\"PepeSmile\",\"image-hash\":\"data\",\"search-tags\":\"pepe frog dank\"}"
+         (format/clj->json {:title "PepeSmile"
+                            :image-hash "data"
+                            :search-tags "pepe frog dank"}))))
 

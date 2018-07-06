@@ -208,4 +208,14 @@
   (when kw
     (str (when-let [n (namespace kw)] (str n "/")) (name kw))))
 
+(defn format-percentage [p t]
+  (str (int (Math/fround (/ (* p 100.0) t))) "%"))
 
+(defn ensure-trailing-slash [s]
+  (str s
+       (when-not (string/ends-with? s "/")
+         "/")))
+
+(defn clj->json
+  [coll]
+  (.stringify js/JSON (clj->js coll)))

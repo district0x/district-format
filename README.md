@@ -9,7 +9,7 @@ helps to set up global configuration in a cleaner way.
 
 
 ## Installation
-Add `[district0x/district-format "1.0.0"]` into your project.clj  
+Add `[district0x/district-format "1.0.1"]` into your project.clj  
 Include `[district.format]` in your CLJS file  
 Optionally include `[district.format.mount]` in your CLJS file, where you use `mount/start`
 
@@ -35,6 +35,9 @@ Optionally include `[district.format.mount]` in your CLJS file, where you use `m
   - [format-time-units](#format-time-units)
   - [format-url](#format-url)
   - [format-namespaced-kw](#format-namespaced-kw)
+  - [format-percentage](#format-percentage)
+  - [ensure-trailing-slash](#ensure-trailing-slash)
+  - [clj->json](#clj->json)
 - [district.format.mount](#districtformatmount)
   
 
@@ -275,6 +278,29 @@ Returns time ago string. If `to-time` is not given, current time is used.
 ```clojure
 (format/format-namespaced-kw :a/b)
 ;; => "a/b"
+```
+
+#### <a name="format-percentage"></a>`format-namespaced-kw [p t]`
+```clojure
+(format/format-percentage 1 3)
+;; => "33%"
+```
+
+#### <a name="ensure-trailing-slash"></a>`ensure-trailing-slash []`
+```clojure
+(format/ensure-trailing-slash "http://127.0.0.1:8080")
+;; => "http://127.0.0.1:8080/"
+
+(format/ensure-trailing-slash "http://127.0.0.1:8080/")
+;; => "http://127.0.0.1:8080/"
+```
+
+#### <a name="clj->json"></a>`clj->json []`
+```clojure
+(format/clj->json {:title "PepeSmile"
+                   :image-hash "data"
+                   :search-tags "pepe frog dank"})
+;; => "{\"title\":\"PepeSmile\",\"image-hash\":\"data\",\"search-tags\":\"pepe frog dank\"}"
 ```
 
 ## district.format.mount
