@@ -280,7 +280,7 @@ Returns time ago string. If `to-time` is not given, current time is used.
 ;; => "a/b"
 ```
 
-#### <a name="format-percentage"></a>`format-namespaced-kw [p t]`
+#### <a name="format-percentage"></a>`format-percentage [p t]`
 ```clojure
 (format/format-percentage 1 3)
 ;; => "33%"
