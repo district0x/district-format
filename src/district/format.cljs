@@ -208,8 +208,8 @@
   (when kw
     (str (when-let [n (namespace kw)] (str n "/")) (name kw))))
 
-(defn format-percentage [p t]
-  (str (int (Math/fround (/ (* p 100.0) t))) "%"))
+(defn format-percentage [t p]
+  (str (int (Math/fround (* (/ t p) 100.0))) "%"))
 
 (defn ensure-trailing-slash [s]
   (str s

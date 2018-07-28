@@ -1,4 +1,4 @@
-(defproject district0x/district-format "1.0.1-SNAPSHOT"
+(defproject district0x/district-format "1.0.2"
   :description "Set of functions helpful for formatting"
   :url "https://github.com/district0x/district-format"
   :license {:name "Eclipse Public License"

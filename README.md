@@ -9,7 +9,7 @@ helps to set up global configuration in a cleaner way.
 
 
 ## Installation
-Add `[district0x/district-format "1.0.1"]` into your project.clj  
+Add `[district0x/district-format "1.0.2"]` into your project.clj  
 Include `[district.format]` in your CLJS file  
 Optionally include `[district.format.mount]` in your CLJS file, where you use `mount/start`
 
