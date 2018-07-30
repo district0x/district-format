@@ -5,7 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
   :dependencies [[com.andrewmcveigh/cljs-time "0.5.2"]
-                 [madvas/cemerick-url-patched "0.1.2-SNAPSHOT"] ;; Temporary until cemerick merges PR26
+                 [madvas/cemerick-url "0.1.2"] ;; Temporary until cemerick merges PR26
                  [mount "0.1.11"]
                  [org.clojure/clojurescript "1.9.946"]]
 
