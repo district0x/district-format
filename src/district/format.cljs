@@ -209,7 +209,7 @@
     (str (when-let [n (namespace kw)] (str n "/")) (name kw))))
 
 (defn format-percentage [t p]
-  (str (int (Math/fround (* (/ t p) 100.0))) "%"))
+  (str (int (js-invoke js/Math "fround" (* (/ t p) 100.0))) "%"))
 
 (defn ensure-trailing-slash [s]
   (str s
