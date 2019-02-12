@@ -114,13 +114,13 @@
   ([address]
    (str "https://etherscan.io/address/" address))
   ([root-url address]
-   (str (ensure-trailing-slash root-url) address)))
+   (str (ensure-trailing-slash root-url) "address/" address)))
 
 (defn etherscan-tx-url
   ([tx-hash]
    (str "https://etherscan.io/tx/" tx-hash))
   ([root-url tx-hash]
-   (str (ensure-trailing-slash root-url) address)))
+   (str (ensure-trailing-slash root-url) "tx/" tx-hash)))
 
 (defn time-ago
   ([from-time]
