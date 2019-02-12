@@ -26,6 +26,8 @@
 
 (def ^:dynamic *default-min-token-fraction-digits* nil)
 
+(declare ensure-trailing-slash)
+
 (defn- get-formatter [fmt]
   (if (keyword? fmt)
     (time-format/formatters fmt)
@@ -108,14 +110,17 @@
       (< 999 x 1000000) (str (format-number (/ x 1000) opts) "K")
       (< 999999 x) (str (format-number (/ x 1000000) opts) "M"))))
 
+(defn etherscan-addr-url
+  ([address]
+   (str "https://etherscan.io/address/" address))
+  ([root-url address]
+   (str (ensure-trailing-slash root-url) address)))
 
-(defn etherscan-addr-url [address]
-  (str "https://etherscan.io/address/" address))
-
-
-(defn etherscan-tx-url [tx-hash]
-  (str "https://etherscan.io/tx/" tx-hash))
-
+(defn etherscan-tx-url
+  ([tx-hash]
+   (str "https://etherscan.io/tx/" tx-hash))
+  ([root-url tx-hash]
+   (str (ensure-trailing-slash root-url) address)))
 
 (defn time-ago
   ([from-time]

@@ -1,4 +1,4 @@
-(defproject district0x/district-format "1.0.3"
+(defproject district0x/district-format "1.0.4-SNAPSHOT"
   :description "Set of functions helpful for formatting"
   :url "https://github.com/district0x/district-format"
   :license {:name "Eclipse Public License"
@@ -16,8 +16,7 @@
                           [karma-cli "1.0.1"]
                           [karma-cljs-test "0.1.0"]]}
 
-  :profiles {:dev {:dependencies [[com.cemerick/piggieback "0.2.2"]
-                                  [day8.re-frame/test "0.1.5"]
+  :profiles {:dev {:dependencies [[day8.re-frame/test "0.1.5"]
                                   [org.clojure/clojure "1.8.0"]
                                   [org.clojure/tools.nrepl "0.2.13"]]
                    :plugins [[lein-cljsbuild "1.1.7"]
@@ -29,4 +28,17 @@
                         :compiler {:output-to "tests-output/tests.js"
                                    :output-dir "tests-output"
                                    :main "tests.runner"
-                                   :optimizations :none}}]})
+                                   :optimizations :none}}]}
+
+  :deploy-repositories [["snapshots" {:url "https://clojars.org/repo"
+                                      :username :env/clojars_username
+                                      :password :env/clojars_password
+                                      :sign-releases false}]
+                        ["releases"  {:url "https://clojars.org/repo"
+                                      :username :env/clojars_username
+                                      :password :env/clojars_password
+                                      :sign-releases false}]]
+
+  :release-tasks [["vcs" "assert-committed"]
+                  ["change" "version" "leiningen.release/bump-version" "release"]
+                  ["deploy"]])

@@ -9,7 +9,10 @@ helps to set up global configuration in a cleaner way.
 
 
 ## Installation
-Add `[district0x/district-format "1.0.3"]` into your project.clj  
+Add <br>
+[![Clojars Project](https://img.shields.io/clojars/v/district0x/district-format.svg)](https://clojars.org/district0x/district-format)<br>
+into your project.clj  
+
 Include `[district.format]` in your CLJS file  
 Optionally include `[district.format.mount]` in your CLJS file, where you use `mount/start`
 
