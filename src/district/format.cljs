@@ -213,8 +213,13 @@
   (when kw
     (str (when-let [n (namespace kw)] (str n "/")) (name kw))))
 
-(defn format-percentage [t p]
-  (str (int (js-invoke js/Math "fround" (* (/ t p) 100.0))) "%"))
+(defn format-percentage [portion total & [format-opts]]
+  (str (format-number (* (/ portion total) 100.0)
+                      (merge
+                        {:max-fraction-digits 1
+                         :min-fraction-digits 0}
+                        format-opts))
+       "%"))
 
 (defn ensure-trailing-slash [s]
   (str s

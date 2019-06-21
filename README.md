@@ -283,10 +283,14 @@ Returns time ago string. If `to-time` is not given, current time is used.
 ;; => "a/b"
 ```
 
-#### <a name="format-percentage"></a>`format-percentage [p t]`
+#### <a name="format-percentage"></a>`format-percentage [portion total & [format-opts]]`
 ```clojure
 (format/format-percentage 1 3)
-;; => "33%"
+;; => "33.3%"
+
+(format/format-percentage 1 7 {:max-fraction-digits 4})
+;; => "14.2857%"
+
 ```
 
 #### <a name="ensure-trailing-slash"></a>`ensure-trailing-slash []`

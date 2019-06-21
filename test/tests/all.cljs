@@ -79,7 +79,9 @@
 
   (is (= "a/b" (format/format-namespaced-kw :a/b)))
 
-  (is (= "33%" (format/format-percentage 1 3)))
+  (is (contains? #{"33,3%" "33.3%"} (format/format-percentage 1 3)))
+
+  (is (contains? #{"14,2857%" "14.2857%"} (format/format-percentage 1 7 {:max-fraction-digits 4})))
 
   (is (= "http://127.0.0.1:8080/" (format/ensure-trailing-slash "http://127.0.0.1:8080")))
 
