@@ -83,6 +83,10 @@
 
   (is (contains? #{"14,2857%" "14.2857%"} (format/format-percentage 1 7 {:max-fraction-digits 4})))
 
+  (is (= "0%" (format/format-percentage 0 3)))
+
+  (is (= "0%" (format/format-percentage 0 0)))
+
   (is (= "http://127.0.0.1:8080/" (format/ensure-trailing-slash "http://127.0.0.1:8080")))
 
   (is (= "http://127.0.0.1:8080/" (format/ensure-trailing-slash "http://127.0.0.1:8080/")))

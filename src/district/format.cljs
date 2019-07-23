@@ -214,11 +214,13 @@
     (str (when-let [n (namespace kw)] (str n "/")) (name kw))))
 
 (defn format-percentage [portion total & [format-opts]]
-  (str (format-number (* (/ portion total) 100.0)
-                      (merge
-                        {:max-fraction-digits 1
-                         :min-fraction-digits 0}
-                        format-opts))
+  (str (if (pos? total)
+         (format-number (* (/ portion total) 100.0)
+                        (merge
+                          {:max-fraction-digits 1
+                           :min-fraction-digits 0}
+                          format-opts))
+         0)
        "%"))
 
 (defn ensure-trailing-slash [s]
