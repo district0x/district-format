@@ -75,6 +75,10 @@
   (is (= "10 hours 4 min. 5 sec." (format/format-time-units {:hours 10 :minutes 4 :seconds 5}
                                                             {:short? true})))
 
+  (is (= true (format/zero-time-units? {:days 0 :hours 0 :minutes 0 :seconds 0})))
+
+  (is (= false (format/zero-time-units? {:days 0 :hours 0 :minutes 0 :seconds 1})))
+
   (is (= "/abc?a=1&b=2" (format/format-url "/abc" {:a 1 :b 2})))
 
   (is (= "a/b" (format/format-namespaced-kw :a/b)))

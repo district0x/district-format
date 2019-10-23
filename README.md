@@ -36,6 +36,7 @@ Optionally include `[district.format.mount]` in your CLJS file, where you use `m
   - [format-bool](#format-bool)
   - [format-time-unit](#format-time-unit)
   - [format-time-units](#format-time-units)
+  - [zero-time-units?](#zero-time-units)
   - [format-url](#format-url)
   - [format-namespaced-kw](#format-namespaced-kw)
   - [format-percentage](#format-percentage)
@@ -269,6 +270,15 @@ Returns time ago string. If `to-time` is not given, current time is used.
 
 (format/format-time-units {:hours 10 :minutes 4 :seconds 5} {:short? true})
 ;; => "10 hours 4 min. 5 sec."
+```
+
+#### <a name="zero-time-units"></a>`zero-time-units? [time-units]` 
+```clojure
+(format/zero-time-units? {:days 0 :hours 0 :minutes 0 :seconds 0})
+;; => true
+
+(format/zero-time-units? {:days 0 :hours 0 :minutes 0 :seconds 1})
+;; => false
 ```
 
 #### <a name="format-url"></a>`format-url [path query-map]` 

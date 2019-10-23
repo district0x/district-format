@@ -205,6 +205,10 @@
     0 -1))
 
 
+(defn zero-time-units? [time-units]
+  (every? zero? (vals time-units)))
+
+
 (defn format-url [path query-map]
   (str path "?" (url/map->query query-map)))
 
